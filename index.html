@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+          script-src 'self';
+          font-src 'self' https://fonts.gstatic.com;
+          style-src 'self' https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="./main.css" rel="stylesheet" type="text/css"/>
+  <title></title>
+</head>
+<body>
+<!--Node.js <span id="node-version"></span>,
+Chromium <span id="chrome-version"></span>,
+and Electron <span id="electron-version"></span>.-->
+
+<div class="main-content">
+  <p>Tetst333333333333333333</p>
+  <div id="drag" class="drag">
+    Drop here
+    <br>
+    Or click
+  </div>
+
+  <div id="filePath" class="result-block d-flex flex-column align-items-baseline hidden">
+    <div class="d-flex">
+      <span>Result: &#32;</span>
+      <strong id="filePathText"></strong>
+    </div>
+
+
+    <button class="hidden" id="buttonOpenFolder" type="button">Открыть папку с файлом</button>
+  </div>
+
+  <div id="loader" class="loader hidden">
+    <img src="./media/tube-spinner.svg" alt="loader">
+  </div>
+
+</div>
+
+<div id="info"></div>
+
+
+<div id="python-modal-error"
+     class="modal-overlay hidden"
+>
+  <div class="modal-content">
+    <h3>Python не установлен</h3>
+    <p>Скачайте установщик с
+      <span class="linkBlank" dataLink="https://www.python.org/downloads/">официального сайта</span>
+    </p>
+
+    <button id="python-modal-error-button" type="button">Проверить ещё раз</button>
+  </div>
+</div>
+
+
+<!-- You can also require other files to run in this process -->
+<script src="./renderer.js"></script>
+</body>
+</html>
