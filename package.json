@@ -17,6 +17,7 @@
     "electron": "^33.2.1",
     "electron-builder": "^25.1.8"
   },
+  "repository": "https://github.com/StasSpawn/electron-builder",
   "build": {
     "appId": "stasApp",
     "productName": "stasApp",
