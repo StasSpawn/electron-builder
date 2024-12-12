@@ -64,7 +64,7 @@ const createWindow = () => {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
 
-  autoUpdater.checkForUpdatesAndNotify();
+  autoUpdater.checkForUpdates();
 
   // open folder with file by click
   ipcMain.handle('open_link_in_browser', async (event, link) => {
