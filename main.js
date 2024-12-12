@@ -32,8 +32,11 @@ app.whenReady().then(() => {
 
 
   ipcMain.handle('pick_file', async (event) => {
-    console.log(autoUpdater.checkForUpdatesAndNotify())
-    return await autoUpdater.checkForUpdatesAndNotify()
+    console.log(12121)
+    const response = await autoUpdater.checkForUpdatesAndNotify();
+    const data = JSON.stringify(response);
+    return data;
+
   })
 
   createWindow();
