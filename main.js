@@ -4,6 +4,8 @@ const path = require('node:path');
 const util = require('util');
 const {autoUpdater, AppUpdater} = require("electron-updater");
 
+autoUpdater.forceDevUpdateConfig = true;
+
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -28,6 +30,11 @@ app.whenReady().then(() => {
 
   autoUpdater.checkForUpdatesAndNotify();
 
+
+  ipcMain.handle('pick_file', async (event) => {
+    console.log(autoUpdater.checkForUpdatesAndNotify())
+    return await autoUpdater.checkForUpdatesAndNotify()
+  })
 
   createWindow();
 
