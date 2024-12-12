@@ -1,6 +1,6 @@
 {
   "name": "electron-builder-test",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "test builder",
   "main": "main.js",
   "scripts": {
@@ -18,9 +18,13 @@
     "electron-builder": "^25.1.8"
   },
   "repository": "https://github.com/StasSpawn/electron-builder",
+  "publish": {
+    "provider": "github",
+    "releaseType": "release"
+  },
   "build": {
     "appId": "stasApp",
-    "productName": "stasApp",
+    "productName": "stasApp 1.0.2",
     "win": {
       "target": "nsis",
       "icon": "build/logo-app.ico"
