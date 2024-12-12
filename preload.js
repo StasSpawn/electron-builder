@@ -2,7 +2,7 @@
 // It has the same sandbox as a Chrome extension.
 
 const {contextBridge, ipcRenderer} = require('electron/renderer');
-const { webUtils } = require('electron');
+const {webUtils} = require('electron');
 
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {
@@ -15,15 +15,20 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+contextBridge.exposeInMainWorld(
+  // Allowed 'ipcRenderer' methods
+  'bridge', {
+    // From main to render
+    sendSettings: (message) => {
+      ipcRenderer.on('sendSettings', message);
+    }
+  }
+);
+
 contextBridge.exposeInMainWorld('electronAPI', {
 
-  openLinkInBrowser: (data) => ipcRenderer.invoke('open_link_in_browser', data),
 
-  pickFile: (data) => ipcRenderer.invoke('pick_file', data),
 
-  checkPython: () => ipcRenderer.invoke('check_python'),
-
-  openFolderWithFile: (data) => ipcRenderer.invoke('open_folder_with_file', data)
 });
 
 
